@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wordify}
+
+\RequirePackage{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{xcolor}
+\RequirePackage{titlesec}
+\RequirePackage{setspace}
+\RequirePackage{enumitem}
+\RequirePackage{amsfonts}
+\RequirePackage{unicode-math}
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions{
+    family=Wordify,
+    prefix=Wordify@
+}
+
+\DeclareStringOption{fontpath}[./]
+
+\ProcessKeyvalOptions*
+
+\geometry{
+    a4paper,
+    total={159.2mm,246.2mm},
+    left=25.4mm,
+    top=25.4mm,
+}
+
+\setmathfont[Path=\Wordify@fontpath,Extension=.ttc,version=wordmathfont]{cambria}
+
+\mathversion{wordmathfont}
+
+\setstretch{1.15}
+
+\definecolor{wordheading12}{RGB}{47,84,150}
+\definecolor{wordheading3}{RGB}{31,55,99}
+
+\newfontfamily\calibrilight{calibril}[
+Path=\Wordify@fontpath,
+Extension=.ttf
+]
+
+\setlength\parskip{8pt}
+\setlength\parindent{0pt}
+
+\setcounter{secnumdepth}{0}
+
+\setmainfont[Path=\Wordify@fontpath,
+    BoldItalicFont=calibriz.ttf,
+    BoldFont      =calibrib.ttf,
+    ItalicFont    =calibrii.ttf]{calibri.ttf}
+
+\titleformat{\section}
+    {\calibrilight\Large\color{wordheading12}}
+    {\thesection}{16pt}{}
+
+\titleformat{\subsection}
+    {\calibrilight\large\color{wordheading12}}
+    {\thesection}{13pt}{}
+
+\titleformat{\subsubsection}
+    {\calibrilight\normalsize\color{wordheading3}}
+    {\thesection}{12pt}{}
+
+\titlespacing{\section}{0pt}{0pt}{-8pt}
+\titlespacing{\subsection}{0pt}{0pt}{-8pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{-8pt}
+
+% \setlist[itemize]{leftmargin=12.7mm}
+
+\raggedright
+
+\setlist[enumerate]{leftmargin=1.27cm, labelsep=0.63cm}
+\setlist[itemize]{leftmargin=1.27cm, labelsep=0.63cm}

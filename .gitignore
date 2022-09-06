@@ -1,0 +1,8 @@
+# I'd put the ttf and ttc files here but copyright doesn't like that
+
+*.ttf
+*.ttc
+
+# Latex auto-generated files
+*.aux
+*.log

@@ -1,0 +1,14 @@
+\documentclass[11pt]{article}
+\usepackage{wordify}
+
+\begin{document}
+
+Wordify is a latex package that makes a latex document look like a MS word 2019 document.
+
+\section{Usage}
+
+Wordify does all of its magic simply by adding \texttt{{\textbackslash}usepackage\{wordify\}} to the preamble of a document. The only other necessary configuration is to specify where the fonts are stored. On windows, this should be simple; the directory is \texttt{C:{\textbackslash}Windows{\textbackslash}Fonts}, but on OSX and Linux it may be necessary to download Calibri (main document font) and Cambria (mathematics font).
+
+It should be noted that due to the usage of custom fonts, \texttt{xelatex} must be used to compile and not \texttt{pdflatex}.
+
+\end{document}
